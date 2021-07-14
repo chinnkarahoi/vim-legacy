@@ -131,42 +131,7 @@
 
 " Special Files
   nnoremap <silent> ei :exec "Split " . OpenInputFile()<cr>
-  nnoremap <silent> e1 :exec "Split " . OpenInputFile(1)<cr>
-  nnoremap <silent> e2 :exec "Split " . OpenInputFile(2)<cr>
-  nnoremap <silent> ef :exec "Split " . g:proj_config_runner_file<cr>
-  nnoremap <silent> em :exec "Split " . g:proj_config_memo<cr>
-  nnoremap <silent> en :exec "Split " . g:proj_config_env<cr>
   nnoremap <silent> ep :exec "Split " . g:proj_config_makefile<cr>
-  nnoremap <silent> ex :exec "Split " . g:proj_config_exrc<cr>
-  nnoremap <silent> ev :exec "Split " . g:proj_config_vimspector<cr>
-  nnoremap <silent> ec :Split ~/.vim/coc-settings.json<cr>
-  nnoremap <silent> E :Split ~/.vim/init.vim<cr>
-  nnoremap <silent> eb :Split ~/.bashrc<cr>
-  function! SpecialFileProvider() abort
-    let files = []
-    let files += filter(split(glob(g:proj_config_dir.'/.*')), 'filereadable(v:val)')
-    let files += filter(split(glob(g:proj_config_dir.'/*')), 'filereadable(v:val)')
-    let files += filter(split(glob(g:proj_config_dir.'/env/*')), 'filereadable(v:val)')
-    let files += filter(split(glob(g:proj_config_sync_dir.'/*')), 'filereadable(v:val)')
-    let files += filter(split(glob(g:proj_config_sync_dir.'/.*')), 'filereadable(v:val)')
-    let files += filter(split(glob(g:proj_config_script_dir.'/*')), 'filereadable(v:val)')
-    let files += filter(split(glob(g:proj_config_root_dir.'/*')), 'filereadable(v:val)')
-    let files += [
-          \ $HOME . '/.vim/coc-settings.json',
-          \ $HOME . '/.vim/init.vim',
-          \ $HOME . '/.bashrc',
-          \ $HOME . '/.tmux.conf',
-          \ ]
-    return files
-  endfunction
-  function! SpecialFilePreviewer(data) abort
-    if !file_readable(a:data) && a:data =~ '.vimspector.json'
-      let fl = readfile(g:proj_config_root_dir . '/.vimspector.json', "b")
-      call writefile(fl, a:data, "b")
-    endif
-    return a:data
-  endfunction
-  nnoremap <silent> ea :exec "LeaderfFile " . g:proj_config_dir<cr>
 
 " REPL
   let g:proj_repl_file = g:proj_config_script_dir . '/repl.vim'
