@@ -27,16 +27,15 @@
   inoremap <c-p> <up>
   inoremap <c-b> <left>
   inoremap <c-f> <right>
-  inoremap <c-e> <end>
-  inoremap <silent> <c-a> <c-r>="<c-o>^"<cr>
-  inoremap <silent> <M-b> <c-r>="<c-o>b"<cr>
-  inoremap <silent> <M-f> <c-r>="<c-o>e"<cr><right>
-  inoremap <silent> <M-u> <c-r>="<c-o>u"<cr>
-  inoremap <silent> <M-U> <c-r>="<c-o><c-r>"<cr>
+  inoremap <silent> <M-b> <c-c>:norm b<cr>i
+  inoremap <silent> <M-f> <c-c>:norm e<cr>a
+  inoremap <silent> <c-e> <c-c>:norm $<cr>a
+  inoremap <silent> <c-a> <c-c>:norm ^<cr>i
+
+  imap <silent> <M-BS> <c-g>u<c-w>
   inoremap <silent> <c-w> <c-g>u<c-w>
   inoremap <silent> <c-u> <c-g>u<c-u>
-  inoremap <silent> <M-BS> <c-g>u<c-w>
-  inoremap <silent> <M-d> <c-r>="<c-\><c-o>\"ide"<cr>
+
   cnoremap <c-a> <home>
   cnoremap <c-b> <left>
   cnoremap <c-f> <right>
@@ -46,6 +45,4 @@
   cnoremap <M-f> <S-Right>
   cnoremap <c-j> <c-n>
   cnoremap <c-k> <c-p>
-  nnoremap <silent> <c-j> <cr>
-  nnoremap <silent> <c-k> k
 
