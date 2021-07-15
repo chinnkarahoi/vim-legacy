@@ -6,8 +6,7 @@
     let g:set_cursor_line=0
     augroup oh_my_cursorline
       autocmd!
-      autocmd VimEnter,InsertLeave,TermLeave * let g:set_cursor_line=1
-      autocmd CursorHold * if g:set_cursor_line==1 | setlocal cursorline | endif
+      autocmd CursorHold * setlocal cursorline
       autocmd InsertEnter,TermEnter * setlocal nocursorline
     augroup END
   endif
