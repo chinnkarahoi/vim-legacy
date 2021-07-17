@@ -41,6 +41,18 @@
     autocmd BufWritePost * if bufname('%') =~ '.exrc' | call LoadExrc() | endif
   augroup END
 
+  function! OpenInputFile(...) abort
+    let g:inputDir = g:proj_config_input_dir
+    if !isdirectory(g:inputDir)
+      call mkdir(g:inputDir, 'p')
+    endif
+    let g:inputFile = g:inputDir . '/' . expand('%:t') . '.in.txt'
+    if a:0 > 0
+      let g:inputFile .= a:1
+    endif
+    return g:inputFile
+  endfunction
+
 " Special Files
   nnoremap <silent> ei :exec "Split " . OpenInputFile()<cr>
   nnoremap <silent> ep :exec "Split " . g:proj_config_makefile<cr>
