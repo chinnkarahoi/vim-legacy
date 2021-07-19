@@ -23,8 +23,6 @@
   vnoremap <silent> <M-l> <esc>:<c-u>exec "norm gv"\|call AutoMoveSwitchForth()<cr>
 
 " emacs
-  inoremap <c-n> <down>
-  inoremap <c-p> <up>
   inoremap <c-b> <left>
   inoremap <c-f> <right>
   inoremap <silent> <M-b> <c-c>:norm b<cr>i
