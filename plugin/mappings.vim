@@ -1,6 +1,5 @@
 " keymaps
   " misc
-    nnoremap <c-q> <nop>
     nnoremap Q qq<esc>
     nnoremap @ @q
     nnoremap D "_d
