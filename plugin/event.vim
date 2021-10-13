@@ -58,41 +58,6 @@
     autocmd VimResized,TabEnter,WinNew * call ResizeWin()
   augroup END
 
-" filetype
-  function SetFiletype(...) abort
-    let cnt = {}
-    let max_cnt = 0
-    let set_ft = ''
-    let winlist = range(1, tabpagewinnr(tabpagenr(), '$'))
-    for i in winlist
-      let ft = getwinvar(i, '&filetype')
-      if &buflisted == 0
-        continue
-      endif
-      if ft == '' || getwinvar(i, 'weak_filetype') == 1
-        continue
-      endif
-      if !has_key(cnt, ft)
-        let cnt[ft] = 0
-      endif
-      let cnt[ft] += 1
-      if cnt[ft] > max_cnt
-        let max_cnt = cnt[ft]
-        let set_ft = ft
-      endif
-    endfor
-    if set_ft != ''
-      for i in winlist
-        if getwinvar(i, '&filetype') == '' || getwinvar(i, 'weak_filetype') == 1
-          let bufnr = winbufnr(i)
-          call setbufvar(bufnr, '&filetype', set_ft)
-          call setbufvar(bufnr, 'weak_filetype', 1)
-        endif
-      endfor
-    endif
-  endfunction
-  autocmd CursorHold * call SetFiletype()
-
 " auto fmt & oi
   let g:autofmt_filetype = ['go', 'json', 'jsonc']
   let g:auto_import_filetype = ['go']
@@ -105,19 +70,6 @@
     if index(g:autofmt_filetype, &filetype) >= 0
       silent! call CocAction('format')
       let save = 1
-    endif
-    if save == 1
-      noautocmd silent! wall
-      set ei=BufWinEnter
-      try
-        let v = winsaveview()
-        noautocmd write
-        edit
-        call winrestview(v)
-      catch
-      finally
-        set ei=
-      endtry
     endif
   endfunction
   autocmd BufWritePost * call AutoFormatAndOi()
