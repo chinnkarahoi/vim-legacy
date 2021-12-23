@@ -25,6 +25,8 @@
 " emacs
   inoremap <c-b> <left>
   inoremap <c-f> <right>
+  inoremap <c-p> <up>
+  inoremap <c-n> <down>
   inoremap <silent> <M-b> <c-c>:norm b<cr>i
   inoremap <silent> <M-f> <c-c>:norm e<cr>a
   inoremap <silent> <c-e> <c-c>:norm $<cr>a
