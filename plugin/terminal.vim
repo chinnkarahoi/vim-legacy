@@ -38,5 +38,3 @@ tnoremap <silent> <M-k> <c-\><c-n><c-w>W<esc>
 
 tnoremap <silent> <RightDrag> <nop>
 tnoremap <silent> <RightMouse> <nop>
-tnoremap <silent> <LeftMouse> <nop>
-tnoremap <silent> <LeftRelease> <c-\><c-n><LeftMouse><c-w>gf
