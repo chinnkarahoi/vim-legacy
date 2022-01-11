@@ -212,7 +212,7 @@ nnoremap <silent> <M-l> <c-w>l
 nnoremap <silent> <M-j> :<c-u>call SmartMj(v:count)<cr>
 nnoremap <silent> <M-k> :<c-u>call SmartMk(v:count)<cr>
 for i in range(1, 9)
-  exec "nnoremap w" . i . " " . i . "<c-w>w"
+  exec "nnoremap <c-w>" . i . " " . i . "<c-w>w"
 endfor
 
 " tab
