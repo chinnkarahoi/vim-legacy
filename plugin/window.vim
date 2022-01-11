@@ -160,7 +160,7 @@ endfunction
 function! WinCut() abort
   call WinCopy()
   try
-    wq
+    silent! wq
   catch
     q!
   endtry
@@ -199,10 +199,10 @@ nnoremap <silent> <M-m> :call ToggleWinSize()<cr>
 nnoremap <silent> <M-m> :Goyo<cr>
 tnoremap <silent> <M-m> <c-\><c-n>:call ToggleWinSize()<cr>
 
-nnoremap wd :call WinCut()<cr>
-nnoremap wy :call WinCopy()<cr>
-nnoremap wp :call WinPaste()<cr>
-nnoremap wP :call WinPaste(1)<cr>
+nnoremap <c-w>d :call WinCut()<cr>
+nnoremap <c-w>y :call WinCopy()<cr>
+nnoremap <c-w>p :call WinPaste()<cr>
+nnoremap <c-w>P :call WinPaste(1)<cr>
 nnoremap <silent> qw :wqa<cr>
 nnoremap <silent> qt :tabclose!<cr>
 nnoremap <silent> qf :qa<cr>
