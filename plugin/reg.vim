@@ -6,6 +6,8 @@ augroup oh_my_registers
         \ let @f=expand('%') |
         \ let @r=expand('%:t:r') |
         \ let @h=getcwd() |
+  autocmd CursorHold *
+        \   let @w=expand("<cword>") |
   autocmd BufEnter,BufWinEnter *
         \ if index(g:AutoRegIgn, &filetype) < 0 && bufname('%') != '' && bufname('%') !~ '\.in.txt$' |
         \   let @p=expand('%:p:h') |
