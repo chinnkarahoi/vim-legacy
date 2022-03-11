@@ -32,7 +32,6 @@
     autocmd BufEnter,BufWinEnter * if &diff == 1 | call PrevNextMap('diff') | endif
   augroup END
   nnoremap <silent> <c-]> :call PrevNextMap('tag')<cr><c-]>
-  nnoremap <silent> <M-/> :call PrevNextMap()<cr>/
   nnoremap <silent> ? :call PrevNextMap()<cr>?
   nnoremap <silent> * :call PrevNextMap()<cr>/\<<c-r><c-w>\><cr>
   nnoremap <silent> g* :call PrevNextMap()<cr>/<c-r><c-w><cr>
