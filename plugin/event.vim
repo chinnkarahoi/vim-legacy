@@ -11,21 +11,6 @@
     augroup END
   endif
 
-" norm zz
-  let g:norm_zz = 0
-  func! s:my_norm_zz()
-    if g:norm_zz == 1 && g:vim_enter_no_zz == 0
-      norm zz
-    endif
-    let g:norm_zz = 0
-    let g:vim_enter_no_zz = 0
-  endfunc
-  let g:vim_enter_no_zz = 0
-  autocmd BufWinEnter,WinNew * let g:norm_zz = 1
-  autocmd BufWinLeave,WinClosed * let g:norm_zz = 0
-  autocmd VimEnter * let g:vim_enter_no_zz = 1
-  autocmd CursorHold * call s:my_norm_zz()
-
 " options
   function! MustSet() abort
     set formatoptions -=cro |
