@@ -12,20 +12,6 @@
     endif
   endfunction
 
-" Tabdrop
-  function! MyTabdrop(...) abort
-    let tab = tabpagenr()
-    doautocmd BufLeave
-    let cmd = 'tabnew'
-    for i in a:000
-      let cmd .= ' ' . i
-    endfor
-    exec cmd
-    " exec tab . "tabmove"
-  endfunction
-  command! -nargs=* -complete=file
-        \ Tabdrop call GoyoWrapper('MyTabdrop', <q-args>)
-
 " Smart Split Windows
   function! MySplit(...)
     doautocmd BufLeave
