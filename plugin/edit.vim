@@ -21,28 +21,3 @@
   inoremap <M-l> <esc>vE
   vnoremap <silent> <M-h> <esc>:<c-u>exec "norm gv"\|call AutoMoveSwitchBack()<cr>
   vnoremap <silent> <M-l> <esc>:<c-u>exec "norm gv"\|call AutoMoveSwitchForth()<cr>
-
-" emacs
-  inoremap <c-b> <left>
-  inoremap <c-f> <right>
-  inoremap <c-p> <up>
-  inoremap <c-n> <down>
-  inoremap <silent> <M-b> <c-c>:norm b<cr>i
-  inoremap <silent> <M-f> <c-c>:norm e<cr>a
-  inoremap <silent> <c-e> <c-c>:norm $<cr>a
-  inoremap <silent> <c-a> <c-c>:norm ^<cr>i
-
-  imap <silent> <M-BS> <c-g>u<c-w>
-  inoremap <silent> <c-w> <c-g>u<c-w>
-  inoremap <silent> <c-u> <c-g>u<c-u>
-
-  cnoremap <c-a> <home>
-  cnoremap <c-b> <left>
-  cnoremap <c-f> <right>
-  cnoremap <M-w> <c-w>
-  cnoremap <M-BS> <c-w>
-  cnoremap <M-b> <S-Left>
-  cnoremap <M-f> <S-Right>
-  cnoremap <c-j> <c-n>
-  cnoremap <c-k> <c-p>
-

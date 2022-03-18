@@ -32,9 +32,3 @@ function! TermKeyWrapper(key, functionToExecute, ...) abort
 endfunction
 tnoremap <silent> <expr> <M-l> TermKeyWrapper("\<M-l>", 'SendCdToFilePath', @p)
 tnoremap <silent> <expr> <C-r> TermReg()
-tnoremap <silent> <M-[> <C-\><C-N>$
-tnoremap <silent> <M-j> <c-\><c-n><c-w>w<esc>
-tnoremap <silent> <M-k> <c-\><c-n><c-w>W<esc>
-
-tnoremap <silent> <RightDrag> <nop>
-tnoremap <silent> <RightMouse> <nop>

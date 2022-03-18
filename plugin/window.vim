@@ -67,7 +67,6 @@
     for i in a:000
       let cmd .= ' ' . i
     endfor
-    call PrevNextMap('goyo')
     exec cmd
     let w:my_prev_winid = winid
     let w:my_prev_line = line
@@ -214,18 +213,3 @@ nnoremap <silent> <M-k> :<c-u>call SmartMk(v:count)<cr>
 for i in range(1, 9)
   exec "nnoremap <c-w>" . i . " " . i . "<c-w>w"
 endfor
-
-" tab
-nnoremap <silent> <M-<> <esc>:tabm -<cr>
-vnoremap <silent> <M-<> <esc>:tabm -<cr>
-inoremap <silent> <M-<> <esc>:tabm -<cr>
-nnoremap <silent> <M->> <esc>:tabm +<cr>
-vnoremap <silent> <M->> <esc>:tabm +<cr>
-inoremap <silent> <M->> <esc>:tabm +<cr>
-nnoremap <silent> <M-,> gT
-vnoremap <silent> <M-,> gT
-inoremap <silent> <M-,> <esc>gt
-nnoremap <silent> <M-.> gt
-vnoremap <silent> <M-.> gt
-inoremap <silent> <M-.> <esc>gt
-nnoremap T <c-w>J<c-w>T
